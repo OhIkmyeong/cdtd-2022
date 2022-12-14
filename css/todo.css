@@ -1,2 +1,47 @@
 @charset "utf-8";
 /* [좌측 TODO LIST] */
+/* 📌[선택한 날짜 출력] */
+#td-date{
+    position:relative;
+    margin-bottom:calc(var(--gap) * 2);
+    text-align:center;
+}
+#td-date-year{
+    padding-left:1em;
+    margin-bottom:-1em;
+    letter-spacing:1em;
+    font-weight:bold; font-size:22px;
+}
+#td-date-day{
+    margin-bottom:-10px;
+    font-weight:bold; font-size:130px;
+}
+#td-date-month,
+#td-date-date{
+    display:inline-block; position:relative;
+    padding:2px 10px;
+    background:var(--black); 
+    font-size:30px; color:var(--green);
+}
+#td-date-month{padding-right:0;}
+#td-date-month::after{
+    content:'.';
+    margin-left:5px;
+}
+#td-date-date{
+    padding-left:5px;
+}
+/* [today icon] */
+.ic-today{
+    display:flex;
+    justify-content:center;align-items:center;
+    position:absolute;
+    transform:rotate(10deg);
+    width:130px; aspect-ratio:1/1;
+    background:url(./../img/star.svg) no-repeat center center / cover;
+    font-family:'Permanent Marker', cursive; 
+    font-size:20px;color:var(--green);
+}
+/* 📌[카운트] */
+/* 📌[작성된 할 일 목록] */
+/* 📌[작성] */
