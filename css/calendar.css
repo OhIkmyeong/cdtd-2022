@@ -1,0 +1,128 @@
+@charset "utf-8";
+/* 📌[달력 상단] */
+#cd-head{
+    display:flex; flex-flow:row nowrap;
+    justify-content:center; align-items:center;
+    gap:var(--gap);
+    margin-bottom:var(--gap);
+    text-align:center;
+}
+
+/* [지난달, 다음달 버튼] */
+[id ^= "btn-mm"]{
+    --wid-btn:50px;
+    display:block; position:relative;
+    width:var(--wid-btn); aspect-ratio:1/1;
+    background:rgba(255,255,255,.1);
+    border-radius:50%; border:none;
+}
+/* 화살표 */
+[id ^= "btn-mm"]::after{
+    --wid-ic:15px;
+    content:'';display:block;position:absolute; box-sizing:border-box;
+    left:50%;top:50%; 
+    width:var(--wid-ic); aspect-ratio:1/1;
+    border:3px solid rgba(255,255,255,.5);
+}
+    #btn-mm-prev::after{
+        border-top:none; border-right:none;
+        transform:translate(-25%,-50%) rotate(45deg);
+    }
+    #btn-mm-next::after{
+        border-bottom:none; border-left:none;
+        transform:translate(-60%,-50%) rotate(45deg);
+    }
+
+    /* hover */
+    [id ^= "btn-mm"]:hover{background:rgba(255,255,255,.2);transform:scale(1.2);}
+    [id ^= "btn-mm"]:focus{background:var(--green);}
+    [id ^= "btn-mm"]:focus::after{border-color:var(--black);}
+
+/* [상단 현재 날짜 표시] */
+#cd-head-yy{
+    margin-bottom:-.6em;
+    letter-spacing:.7em;
+    font-size:14px;color:rgba(255,255,255,.7);
+}
+#cd-head-mm-num{
+    letter-spacing:.05em;
+    font-size:5rem; font-weight:bold;
+}
+#cd-head-mm-eng{
+    margin-top:-.5em;
+    font-size:16px; color:rgba(255,255,255,.5);
+}
+
+/* 📌[달력 본문] */
+#cd{
+    width:100%; max-width:800px;
+    text-align:center;
+}
+#cd caption{display:none;}
+
+/* thead */
+#cd thead{font-size:14px; font-weight:bold;}
+#cd thead th{
+    padding:0 12px .8em;
+    border-bottom:1px solid rgba(255,255,255,.3);
+    text-align:left;
+}
+/* tbody */
+#cd tbody td{
+    padding-top:10px;
+}
+/* [cell] */
+.cd-cell{
+    display:flex;
+    position:relative;
+    width:calc(100% - 10px); aspect-ratio:1/1;
+    padding:14px;
+    margin:0 auto;
+    background:rgba(255,255,255,.03);
+    border:none;
+    border-radius:10px;
+    text-align:left;color:rgba(255,255,255,.6);
+    cursor:pointer;
+}
+    /* hover */
+    .cd-cell:hover{
+        background:rgba(255,255,255,.07);
+    }
+
+    /* today */
+    .cd-cell.today{
+        background:var(--orange);
+        color:var(--black);
+        box-shadow:0 0 3rem var(--orange);
+    }
+
+    /* on */
+    .cd-cell.on{
+        background:var(--green);
+        color:var(--black);
+        box-shadow:0 0 1rem var(--green);
+
+    }
+
+/* [task num] */
+.cd-td-num{
+    position:absolute;
+    right:15px; top:25px;
+    padding:1px 6px;
+    border-radius:50px;
+    font-size:13px; 
+}
+    .cd-td-num.rmn{
+        top:25px;
+        background:rgb(206, 13, 13);
+    }
+    .cd-td-num.done{
+        background:rgb(89, 90, 96);
+    }
+    .cd-td-num.rmn ~ .cd-td-num.done{
+        top:45px;
+    }
+    .cd-cell.on ~ .cd-td-num.done,
+    .cd-cell.today ~ .cd-td-num.done{
+        background:rgb(157, 158, 162);
+    }

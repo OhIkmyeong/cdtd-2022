@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* 레이아웃 관련 */
+/* [전체] */
+#wrap-cdtd{
+    display:flex;flex-flow:row wrap;
+    position:relative;
+    width:100%; min-height:100vh;
+}
+
+/* [TO DO] */
+#wrap-td{
+    display:flex;flex-flow:column nowrap;
+    justify-content:flex-end; align-items:center;
+    padding:var(--gap);
+    position:relative;
+    width:40%; min-height:100vh;
+    background:var(--green);
+}
+
+/* [CALENDAR] */
+#wrap-cd{
+    display:flex;flex-flow:column nowrap;
+    justify-content:center; align-items:center;
+    padding:var(--gap) calc(var(--gap) * 2);
+    position:relative;
+    width:60%; min-height:100vh;
+    background:var(--black); color:#fff;
+}
