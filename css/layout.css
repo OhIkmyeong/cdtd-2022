@@ -11,7 +11,7 @@
 #wrap-td{
     display:flex;flex-flow:column nowrap;
     justify-content:center; align-items:center;
-    padding:var(--gap);
+    padding:var(--gap); padding-top:calc(var(--gap) * 2);
     position:relative;
     width:40%; min-height:100vh;
     background:var(--green);
@@ -25,4 +25,17 @@
     position:relative;
     width:60%; min-height:100vh;
     background:var(--black); color:#fff;
+}
+
+/* 미디어 쿼리 */
+@media all and (max-width:1400px){
+    /* [TO DO] */
+    #wrap-td{
+        width:100%;
+        min-height:max-content;
+    }
+    /* [CALENDAR] */
+    #wrap-cd{
+        width:100%;
+    }
 }
