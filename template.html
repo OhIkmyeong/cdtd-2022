@@ -1,0 +1,186 @@
+<div id="wrap-cdtd">
+    <!-- TO DO LIST -->
+    <section id="wrap-td">
+        <!-- 선택한 날짜 출력 -->
+        <article id="td-date">
+            <!-- 오늘일시 -->
+            <div id="ic-today">TODAY</div>
+
+            <!--  -->
+            <p id="td-date-year">2022</p>
+            <p id="td-date-day">MON</p>
+            <span id="td-date-month">12</span><span id="td-date-date">31</span>
+        </article>
+
+
+        <!-- 카운트 -->
+        <article id="td-count">
+            <!-- 카운트-텍스트 -->
+            <div id="td-count-text">
+                <strong>99</strong>개의 할 일 중 <strong>10</strong>개를 달성하였습니다.
+            </div><!-- td-count-text -->
+
+            <!-- 카운트-막대그래프 -->
+            <div id="td-count-graph">
+                <div id="td-count-graph-bar"></div>
+                <div id="td-count-graph-num">55%</div>
+            </div><!-- td-count-graph -->
+        </article><!-- td-count -->
+
+        <!-- 작성된 할 일 목록 출력 -->
+        <ul id="td-list">
+            <li class="td-list-item">
+                <label class="lbl-chk">
+                    <input type="checkbox"/>
+                    <span class="ic"></span>
+                    <p class="td-list-item-txt">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, at.
+                    </p>
+                </label>
+                <button class="btn-del" title="삭제"></button>
+            </li>
+        </ul><!-- td-list -->
+
+        <!-- 할 일 입력 -->
+        <form id="form-add-td">
+            <input type="text" id="ipt-add-td" title="할 일 입력" placeholder="Write something TO DO"/>
+            <button id="btn-add-td" title="할 일 등록">SUBMIT</button>
+        </form><!-- form-td-list -->
+    </section><!-- wrap-td -->
+
+    <!-- CALENDAR -->
+    <section id="wrap-cd">
+        <!-- 달력 상단 -->
+        <article id="cd-head">
+            <button id="btn-mm-prev" title="지난달"></button>
+            <div>
+                <p id="cd-head-yy">2022</p>
+                <p id="cd-head-mm-num">12</p>
+                <p id="cd-head-mm-eng">DECEMBER</p>
+            </div>
+            <button id="btn-mm-next" title="다음달"></button>
+        </article><!-- cd-head -->
+
+        <!-- 달력 -->
+        <table id="cd">
+            <caption>달력</caption>
+            <colgroup>
+                <col style="width:calc(100% / 7);">
+                <col style="width:calc(100% / 7);">
+                <col style="width:calc(100% / 7);">
+                <col style="width:calc(100% / 7);">
+                <col style="width:calc(100% / 7);">
+                <col style="width:calc(100% / 7);">
+                <col style="width:calc(100% / 7);">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>SUN</th>
+                    <th>MON</th>
+                    <th>TUE</th>
+                    <th>WED</th>
+                    <th>THU</th>
+                    <th>FRI</th>
+                    <th>SAT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <button class="cd-cell">3</button>
+                        <div class="cd-td-num rmn">3</div>
+                        <div class="cd-td-num done">159</div>
+                    </td>
+                    <td>
+                        <button class="cd-cell on">4</button>
+                        <div class="cd-td-num rmn">159</div>
+                        <div class="cd-td-num done">159</div>
+                    </td>
+                    <td>
+                        <button class="cd-cell today">5</button>
+                        <div class="cd-td-num rmn">159</div>
+                        <div class="cd-td-num done">159</div>
+                    </td>
+                    <td>
+                        <button class="cd-cell">6</button>
+                    </td>
+                    <td>
+                        <button class="cd-cell">7</button>
+                        <div class="cd-td-num done">159</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="cd-cell">1</button>
+                    </td>
+                    <td>
+                        <button class="cd-cell">2</button>
+                    </td>
+                    <td>
+                        <button class="cd-cell">3</button>
+                    </td>
+                    <td>
+                        <button class="cd-cell">4</button>
+                    </td>
+                    <td>
+                        <button class="cd-cell">5</button>
+                    </td>
+                    <td>
+                        <button class="cd-cell">6</button>
+                    </td>
+                    <td>
+                        <button class="cd-cell">7</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="cd-cell">1</button>
+                    </td>
+                    <td>
+                        <button class="cd-cell">2</button>
+                    </td>
+                    <td>
+                        <button class="cd-cell">3</button>
+                    </td>
+                    <td>
+                        <button class="cd-cell">4</button>
+                    </td>
+                    <td>
+                        <button class="cd-cell">5</button>
+                    </td>
+                    <td>
+                        <button class="cd-cell">6</button>
+                    </td>
+                    <td>
+                        <button class="cd-cell">7</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="cd-cell">1</button>
+                    </td>
+                    <td>
+                        <button class="cd-cell">2</button>
+                    </td>
+                    <td>
+                        <button class="cd-cell">3</button>
+                    </td>
+                    <td>
+                        <button class="cd-cell">4</button>
+                    </td>
+                    <td>
+                        <button class="cd-cell">5</button>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section><!-- wrap-cd -->
+</div><!-- wrap-cdtd -->

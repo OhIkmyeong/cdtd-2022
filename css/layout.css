@@ -10,7 +10,7 @@
 /* [TO DO] */
 #wrap-td{
     display:flex;flex-flow:column nowrap;
-    justify-content:flex-end; align-items:center;
+    justify-content:center; align-items:center;
     padding:var(--gap);
     position:relative;
     width:40%; min-height:100vh;

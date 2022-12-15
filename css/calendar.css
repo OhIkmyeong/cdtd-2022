@@ -88,7 +88,14 @@
     .cd-cell:hover{
         background:rgba(255,255,255,.07);
     }
-
+    
+    /* on */
+    .cd-cell.on{
+        background:var(--green);
+        color:var(--black);
+        box-shadow:0 0 1rem var(--green);
+    }
+    
     /* today */
     .cd-cell.today{
         background:var(--orange);
@@ -96,21 +103,22 @@
         box-shadow:0 0 3rem var(--orange);
     }
 
-    /* on */
-    .cd-cell.on{
-        background:var(--green);
-        color:var(--black);
-        box-shadow:0 0 1rem var(--green);
-
-    }
+    /* saturday */
+    .cd-cell.saturday{color:royalblue;}
+    /* sunday */
+    .cd-cell.sunday{color:red;}
+    .cd-cell.today.sunday{color:brown;}
 
 /* [task num] */
 .cd-td-num{
     position:absolute;
     right:15px; top:25px;
-    padding:1px 6px;
+    min-width:20px;
+    padding:2px 6px;
     border-radius:50px;
     font-size:13px; 
+    user-select:none;
+    pointer-events:none;
 }
     .cd-td-num.rmn{
         top:25px;
@@ -120,7 +128,7 @@
         background:rgb(89, 90, 96);
     }
     .cd-td-num.rmn ~ .cd-td-num.done{
-        top:45px;
+        top:50px;
     }
     .cd-cell.on ~ .cd-td-num.done,
     .cd-cell.today ~ .cd-td-num.done{

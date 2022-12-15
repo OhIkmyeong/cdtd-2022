@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Permanent+Marker&display=swap');
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
 :root{
     --f-family:'Outfit',"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
@@ -7,6 +7,8 @@
     --gap:40px;
 
     --black:rgb(2, 6, 30);
+    --black-op:rgba(2,6,30,.1);
+
     --grey:rgb(237, 237, 237);
     --green:rgb(178, 247, 136);
     --orange:rgb(255, 123, 80);
@@ -23,10 +25,13 @@ table{
     border-collapse:collapse; border-spacing:0;
 }
 th,td{position:relative;}
-button{
+button,input{
     font-family:inherit; font-size:inherit; color:inherit;
     cursor:pointer;}
 /*  */
 html,body{
     font-family:var(--f-family); font-size:18px; color:var(--black);
 }
+/* 스크롤바 */
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-thumb{background:var(--black);}
