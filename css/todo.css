@@ -145,6 +145,9 @@
         border-top:none; border-right:none;
     }
 /* 텍스트 */
+.td-list-item-txt{
+    width:calc(100% - 1em);
+}
 :checked ~ .td-list-item-txt{
     text-decoration:line-through;
     opacity:.8;
