@@ -95,6 +95,7 @@ export class Calendar {
             $btn.textContent = i;
             $btn.dataset.dateInfo = dataString;
             if( dataString == this.today) $btn.classList.add('today');
+            $btn.style.animation = `cd-cell-display .5s ${i / 60}s both linear`;
             $td.appendChild($btn);
 
             //남아있는일,한 일 표시

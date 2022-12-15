@@ -123,9 +123,11 @@
     .cd-td-num.rmn{
         top:25px;
         background:rgb(206, 13, 13);
+        animation: rmn-done-display .5s 1s linear both;
     }
     .cd-td-num.done{
         background:rgb(89, 90, 96);
+        animation: rmn-done-display .5s 1.5s linear both;
     }
     .cd-td-num.rmn ~ .cd-td-num.done{
         top:50px;
@@ -134,3 +136,13 @@
     .cd-cell.today ~ .cd-td-num.done{
         background:rgb(157, 158, 162);
     }
+
+@keyframes cd-cell-display {
+    from{opacity:0;transform:translateY(20px);}
+    to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes rmn-done-display {
+    from{opacity:0; transform:scale(1.5);}
+    to{opacity:1; transform:scale(1);}
+}

@@ -96,6 +96,7 @@
     border:2px solid var(--black);
     box-shadow:5px 5px 0 var(--black);
 }
+
     /* empty */
     #td-list:empty::after{
         content:'There is nothing to do...'; display:block; position:absolute;
@@ -114,6 +115,7 @@
     width:100%;
     padding-bottom:10px;
     border-bottom:2px solid var(--black);
+    transform-origin:left center;
 }
 /* input[type="checkbox"] */
 .lbl-chk{
@@ -206,4 +208,10 @@
     background:var(--black);
     border-radius:20px 5px;
     font-size:12px; font-weight:bold; color:var(--green);
+}
+
+/* 애니메이션 */
+@keyframes display-td-item {
+    from{opacity:0;transform:translateX(-30px);}
+    to{opacity:1;transform:translateX(0);}
 }

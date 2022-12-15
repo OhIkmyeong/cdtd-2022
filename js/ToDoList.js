@@ -155,6 +155,7 @@ export class ToDoList {
 
         //리스트에 아이템 추가
         const $item = this.make_td_item(val,false);
+        $item.style.animation = `display-td-item 0.5s 0s linear both`;
         this.$tdList.appendChild($item);
         this.$tdList.scrollTo({
             top : this.$tdList.scrollHeight,
@@ -177,9 +178,11 @@ export class ToDoList {
         const items = this.data[dateString];
         if(!items?.length) return;
         const $frag = document.createDocumentFragment();
-        items.forEach(item => {
+        items.forEach((item,idx) => {
             const {val,done} = item;
-            $frag.appendChild(this.make_td_item(val,done));
+            const $item = this.make_td_item(val,done);
+            $item.style.animation = `display-td-item 0.5s ${(idx / 10)}s linear both`;
+            $frag.appendChild($item);
         });
         this.$tdList.appendChild($frag);
     }//fill_td_list
