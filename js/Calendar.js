@@ -8,7 +8,8 @@ export class Calendar {
         this.$year = document.getElementById('cd-head-yy');
         this.$monthNum = document.getElementById('cd-head-mm-num');
         this.$monthEng = document.getElementById('cd-head-mm-eng');
-        this.$tbody = document.getElementById('cd').getElementsByTagName('TBODY')[0];
+        this.$tbl = document.getElementById('cd');
+        this.$tbody = null;
 
         this.today = return_date_string(new Date());
         this.curr = this.today; 
@@ -26,6 +27,9 @@ export class Calendar {
         //todo 클래스 받아오기
         this.TODO = TODO;
 
+        //최초로 테이블 그려주기
+        this.draw_tbl();
+
         //상단날짜, 캘린더 채우기
         this.display_all(this.today);
         
@@ -35,6 +39,39 @@ export class Calendar {
         //tbody에 이벤트 달기
         this.$tbody.addEventListener('click',this.on_click_btn_date);
     }//init
+
+    /**
+     * 최초로 테이블 그려주기 (caption,colgroup,thead,tbody)
+     */
+    draw_tbl(){
+        const $frag = document.createDocumentFragment();
+        const $caption = document.createElement('CAPTION');
+        const $colgroup = document.createElement('COLGROUP');
+        const $thead = document.createElement('THEAD');
+        this.$tbody = document.createElement('TBODY');
+
+        $caption.textContent = "달력";
+        for(let i=0; i<7; i++){
+            const $col = document.createElement('COL');
+            $col.style.width = "width:calc(100% / 7)";
+            $colgroup.appendChild($col);
+        }
+
+        const $trHead = document.createElement('TR');
+        const days = ["sun","mon","tue","wed","thu","fri","sat"];
+        days.forEach(day => {
+            const $th = document.createElement('TH');
+            $th.textContent = day.toUpperCase();
+            $trHead.appendChild($th);
+        })
+        $thead.appendChild($trHead);
+        
+        $frag.appendChild($caption);
+        $frag.appendChild($colgroup);
+        $frag.appendChild($thead);
+        $frag.appendChild(this.$tbody);
+        this.$tbl.appendChild($frag);
+    }//draw_tbl
 
     /**
      * 캘린더, 상단 날짜 전체 변경
